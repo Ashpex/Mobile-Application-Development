@@ -17,7 +17,7 @@ import android.widget.Toast;
 
 import java.util.Locale;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity {
 
     private Button button;
     private EditText edit_text;
@@ -118,7 +118,7 @@ public class MainActivity extends AppCompatActivity {
 
     // Set background color
     private void setBackgroundColor(String chosenColor, ConstraintLayout myScreen){
-        if(chosenColor.contains("vy")) myScreen.setBackgroundColor(0xff00ff00);
+        if(chosenColor.contains("vy")) myScreen.setBackgroundColor(0xff120729);
         if(chosenColor.contains("quan")) myScreen.setBackgroundColor(0xff120629);
         if(chosenColor.contains("nguyen")) myScreen.setBackgroundColor(0xff120605);
         if(chosenColor.contains("phuoc")) myScreen.setBackgroundColor(0xff120624);
