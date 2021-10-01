@@ -3,17 +3,20 @@ package com.ashpex.registerform;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
-public class registerForm extends AppCompatActivity {
+public class registerform extends AppCompatActivity {
 
     private EditText editUsername;
     private EditText editPassword;
@@ -26,6 +29,7 @@ public class registerForm extends AppCompatActivity {
     private CheckBox checkTennis;
     private CheckBox checkFutbal;
     private CheckBox checkOthers;
+    private String gender;
     int day;
     int month;
     int year;
@@ -61,6 +65,15 @@ public class registerForm extends AppCompatActivity {
             }
         });
 
+        radGender.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int checkedId) {
+                int radioButtonID = radioGroup.getCheckedRadioButtonId();
+                RadioButton radioButton = (RadioButton) radioGroup.findViewById(radioButtonID);
+                gender = (String) radioButton.getText();
+            }
+        });
+
         btnReset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -72,35 +85,36 @@ public class registerForm extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(validateInfo()){
-                    finish();
+                    handleActivity();
                 }
             }
         });
     }
 
     private boolean validateInfo() {
-        if(!editRetype.getText().toString().equals(editPassword.getText().toString())){
+
+        if (editUsername.getText().toString().equals("")){
+            Toast.makeText(this, "Username cannot be empty", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+
+        if (!editRetype.getText().toString().equals(editPassword.getText().toString())){
             Toast.makeText(this, "Password does not match", Toast.LENGTH_SHORT).show();
             return false;
 
         }
 
-        if(editPassword.getText().toString().equals("")){
+        if (editPassword.getText().toString().equals("")){
             Toast.makeText(this, "Password cannot be empty", Toast.LENGTH_SHORT).show();
             return false;
         }
 
-        if(editUsername.getText().toString().equals("")){
-            Toast.makeText(this, "Username cannot be empty", Toast.LENGTH_SHORT).show();
-            return false;
-        }
-
-        if(editBirthday.getText().toString().equals("")){
+        if (editBirthday.getText().toString().equals("")){
             Toast.makeText(this, "Birthday cannot be empty", Toast.LENGTH_SHORT).show();
             return false;
         }
 
-        if(radGender.getCheckedRadioButtonId() == -1){
+        if (radGender.getCheckedRadioButtonId() == -1){
             Toast.makeText(this, "Please select gender", Toast.LENGTH_SHORT).show();
             return false;
         }
@@ -119,6 +133,44 @@ public class registerForm extends AppCompatActivity {
         DatePickerDialog datePickerDialog = new DatePickerDialog(this, android.R.style.Theme_Material_Dialog,
                 dateSetListener, year, month, day);
         datePickerDialog.show();
+    }
+
+    private void handleActivity() {
+        Intent myIntent = new Intent(registerform.this, resultform.class);
+        Bundle myBundle = new Bundle();
+
+        myBundle.putString("Username", editUsername.getText().toString());
+        myBundle.putString("Password", editPassword.getText().toString());
+        myBundle.putString("Date", editBirthday.getText().toString());
+        myBundle.putString("Gender",gender);
+
+        String hobby = "";
+        if (checkFutbal.isChecked()){
+            hobby += "Futbal ";
+        }
+        if (checkTennis.isChecked()){
+            hobby += "Tennis";
+        }
+        if (checkOthers.isChecked()){
+            hobby += "Others...";
+        }
+
+        myBundle.putString("Hobbies", hobby);
+        myIntent.putExtras(myBundle);
+        startActivityForResult(myIntent, 1234);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+        super.onActivityResult(requestCode, resultCode, data);
+        try {
+            if ((requestCode == 1234) && (resultCode == Activity.RESULT_OK)){
+                finish();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     private void reset() {
