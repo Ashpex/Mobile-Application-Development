@@ -31,7 +31,7 @@
 
             <!--this is the actual edit text which takes the input-->
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/txtUsername"
+                android:id="@+id/editUsername"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
@@ -64,7 +64,7 @@
 
             <!--this is the actual edit text which takes the input-->
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/txtPassword"
+                android:id="@+id/editPassword"
                 android:inputType="textPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
@@ -100,7 +100,7 @@
 
             <!--this is the actual edit text which takes the input-->
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/txtRetype"
+                android:id="@+id/editRetype"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword" />
@@ -136,7 +136,7 @@
 
             <!--this is the actual edit text which takes the input-->
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/txtBirthday"
+                android:id="@+id/editBirthday"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:clickable="false"
