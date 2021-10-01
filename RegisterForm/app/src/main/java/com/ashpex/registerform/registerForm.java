@@ -8,7 +8,7 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioGroup;
 
-public class registerform extends AppCompatActivity {
+public class registerForm extends AppCompatActivity {
 
     private EditText txtUsername;
     private EditText txtPassword;
@@ -22,7 +22,7 @@ public class registerform extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_registerform);
+        setContentView(R.layout.activity_registerForm);
 
         txtUsername = (EditText) findViewById(R.id.txtUsername);
         txtPassword = (EditText) findViewById(R.id.txtPassword);
