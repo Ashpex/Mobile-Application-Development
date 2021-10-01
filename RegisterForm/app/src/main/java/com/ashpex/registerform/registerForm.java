@@ -22,7 +22,7 @@ public class registerForm extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_registerForm);
+        setContentView(R.layout.activity_registerform);
 
         txtUsername = (EditText) findViewById(R.id.txtUsername);
         txtPassword = (EditText) findViewById(R.id.txtPassword);

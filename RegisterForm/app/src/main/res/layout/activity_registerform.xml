@@ -142,7 +142,8 @@
                 android:clickable="false"
                 android:cursorVisible="false"
                 android:focusable="false"
-                android:focusableInTouchMode="false" />
+                android:focusableInTouchMode="false"
+                tools:ignore="SpeakableTextPresentCheck" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
