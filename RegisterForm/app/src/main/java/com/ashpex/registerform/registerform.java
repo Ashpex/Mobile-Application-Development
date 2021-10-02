@@ -30,9 +30,9 @@ public class registerform extends AppCompatActivity {
     private CheckBox checkFutbal;
     private CheckBox checkOthers;
     private String gender;
-    int day;
-    int month;
-    int year;
+    int day = 10;
+    int month = 10;
+    int year = 2021;
 
 
     @Override
@@ -69,8 +69,10 @@ public class registerform extends AppCompatActivity {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int checkedId) {
                 int radioButtonID = radioGroup.getCheckedRadioButtonId();
-                RadioButton radioButton = (RadioButton) radioGroup.findViewById(radioButtonID);
-                gender = (String) radioButton.getText();
+                if (radioButtonID != -1){
+                    RadioButton selectedGender = (RadioButton) findViewById(radioButtonID);
+                    gender = (String) selectedGender.getText().toString();
+                }
             }
         });
 
@@ -80,6 +82,7 @@ public class registerform extends AppCompatActivity {
                 reset();
             }
         });
+
 
         btnSignup.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -149,7 +152,7 @@ public class registerform extends AppCompatActivity {
             hobby += "Futbal ";
         }
         if (checkTennis.isChecked()){
-            hobby += "Tennis";
+            hobby += "Tennis ";
         }
         if (checkOthers.isChecked()){
             hobby += "Others...";
