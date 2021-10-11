@@ -44,7 +44,7 @@ public class MainActivity extends Activity {
         personArrayList.add(new Person(++currentId,"Bùi Ngọc Thảo Vy","0922334455",R.drawable.avatar02));
         personArrayList.add(new Person(++currentId,"Lê Hồng Quân","0933668899",R.drawable.avatar01));
         personArrayList.add(new Person(++currentId,"Huỳnh Ngọc Nguyên","0923456789",R.drawable.avatar03));
-        personArrayList.add(new Person(++currentId,"","098989873",R.drawable.avatar04));
+        personArrayList.add(new Person(++currentId,"Nguyễn Trọng Phước","098989873",R.drawable.avatar04));
         personArrayList.add(new Person(++currentId,"Trương Quốc Vương","0987654323",R.drawable.avatar05));
 
 
