@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/RssFeed (2)/RssFeed/app/src/main/res/layout/activity_first.xml" value="0.2558876811594203" />
+        <entry key="..\:/RssFeed (2)/RssFeed/app/src/main/res/layout/activity_main.xml" value="0.2558876811594203" />
+        <entry key="..\:/RssFeed (2)/RssFeed/app/src/main/res/layout/activity_show_headlines.xml" value="0.2558876811594203" />
+        <entry key="..\:/RssFeed (2)/RssFeed/app/src/main/res/layout/activity_single_item.xml" value="0.2558876811594203" />
+        <entry key="..\:/RssFeed (2)/RssFeed/app/src/main/res/layout/grid.xml" value="0.2558876811594203" />
+        <entry key="..\:/RssFeed (2)/RssFeed/app/src/main/res/layout/simple_list_item_1.xml" value="0.2558876811594203" />
+        <entry key="app/src/main/res/drawable/ic_thanhnien.xml" value="0.421875" />
+        <entry key="app/src/main/res/drawable/ic_tuoitre.xml" value="0.421875" />
+        <entry key="app/src/main/res/layout/activity_first.xml" value="0.30885416666666665" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.30885416666666665" />
+        <entry key="app/src/main/res/layout/activity_show_headlines.xml" value="0.4270833333333333" />
+        <entry key="app/src/main/res/layout/activity_single_item.xml" value="0.40208333333333335" />
+        <entry key="app/src/main/res/layout/grid_view.xml" value="0.30885416666666665" />
+        <entry key="app/src/main/res/layout/simple_list_item_1.xml" value="0.5" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
